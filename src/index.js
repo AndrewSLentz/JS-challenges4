@@ -6,15 +6,15 @@
  */
 
 function max(a, b) {
-    if (typeof(a) === 'number' && typeof(b) === 'number') {
-        return Math.max(a, b);
-    } else if (typeof(a) === 'number' && typeof(b) !== 'number') {
-        return a;
-    } else if (typeof(a) !== 'number' && typeof(b) === 'number') {
-        return b;
-    } else {
-        return NaN;
-    }
+  if (typeof(a) === 'number' && typeof(b) === 'number') {
+    return Math.max(a, b);
+  } else if (typeof(a) === 'number' && typeof(b) !== 'number') {
+    return a;
+  } else if (typeof(a) !== 'number' && typeof(b) === 'number') {
+    return b;
+  } else {
+    return NaN;
+  }
 }
 
 console.assert(max(1, 3) === 3);
@@ -32,23 +32,23 @@ console.assert(isNaN(max("aaa", "bbb")));
  */
 
 function maxOfThree(a, b, c) {
-    if (isNaN(a) === false && isNaN(b) === false && isNaN(c) === false) {
-        return Math.max(a, b, c);
-    } else if (isNaN(a) === true && isNaN(b) === false && isNaN(c) === false) {
-        return Math.max(b, c);
-    } else if (isNaN(a) === false && isNaN(b) === true && isNaN(c) === false) {
-        return Math.max(a, c);
-    } else if (isNaN(a) === false && isNaN(b) === false && isNaN(c) === true) {
-        return Math.max(a, b);
-    } else if (isNaN(a) === true && isNaN(b) === true && isNaN(c) === false) {
-        return c;
-    } else if (isNaN(a) === true && isNaN(b) === false && isNaN(c) === true) {
-        return b;
-    } else if (isNaN(a) === false && isNaN(b) === true && isNaN(c) === true) {
-        return a;
-    } else {
-        return NaN
-    }
+  if (isNaN(a) === false && isNaN(b) === false && isNaN(c) === false) {
+    return Math.max(a, b, c);
+  } else if (isNaN(a) === true && isNaN(b) === false && isNaN(c) === false) {
+    return Math.max(b, c);
+  } else if (isNaN(a) === false && isNaN(b) === true && isNaN(c) === false) {
+    return Math.max(a, c);
+  } else if (isNaN(a) === false && isNaN(b) === false && isNaN(c) === true) {
+    return Math.max(a, b);
+  } else if (isNaN(a) === true && isNaN(b) === true && isNaN(c) === false) {
+    return c;
+  } else if (isNaN(a) === true && isNaN(b) === false && isNaN(c) === true) {
+    return b;
+  } else if (isNaN(a) === false && isNaN(b) === true && isNaN(c) === true) {
+    return a;
+  } else {
+    return NaN
+  }
 }
 
 console.assert(maxOfThree(1, 3, 2) === 3);
@@ -66,13 +66,13 @@ console.assert(isNaN(maxOfThree("aaa", "bbb", "ccc")));
  */
 
 function isVowel(char) {
-    if (typeof(char) !== 'string') {
-        return false;
-    } else if (char.toUpperCase() === 'A' || char.toUpperCase() === 'E' || char.toUpperCase() === 'I' || char.toUpperCase() === 'O' || char.toUpperCase() === 'U') {
-        return true;
-    } else {
-        return false;
-    }
+  if (typeof(char) !== 'string') {
+    return false;
+  } else if (char.toUpperCase() === 'A' || char.toUpperCase() === 'E' || char.toUpperCase() === 'I' || char.toUpperCase() === 'O' || char.toUpperCase() === 'U') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.assert(isVowel(0) === false);
@@ -94,17 +94,17 @@ console.assert(isVowel("E") === true);
  */
 
 function rovarspraket(words) {
-    var output = '';
-    words.toString().split('').forEach(function(character) {
-        if (isNaN(parseInt(character)) === false) {
-            output = output + character;
-        } else if (isVowel(character) === true) {
-            output = output + character;
-        } else {
-            output = output + character + 'o' + character;
-        }
-    })
-    return output;
+  var output = '';
+  words.toString().split('').forEach(function(character) {
+    if (isNaN(parseInt(character)) === false) {
+      output = output + character;
+    } else if (isVowel(character) === true) {
+      output = output + character;
+    } else {
+      output = output + character + 'o' + character;
+    }
+  })
+  return output;
 }
 
 console.assert(rovarspraket("a") === "a")
