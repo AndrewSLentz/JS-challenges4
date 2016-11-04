@@ -24,12 +24,15 @@ console.assert(total === 24)
 // using forEach() from above, write your own reduce()
 // that takes an array and a function
 // ----------------------------
-function reduce(array, callback) {
+function reduce(array, callback, initialValue) {
   var accumulator;
   forEach(array, function(value, i, originalArray) {
+    if (typeof initialValue === 'undefined') {
+      initialValue = value;
+    }
     if (i === 0) {
-      accumulator = value;
-    } else {
+      accumulator = initialValue;
+    }
       accumulator = callback(accumulator, value, i, originalArray);
     }
   });
